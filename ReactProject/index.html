@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React的第一个项目</title>
+   
+</head>
+<body>
+    <div id='example'></div>
+    <script type="text/javascript" src="./js/react.min.js"> </script>
+    <script type='text/javascript' src='./js/react-dom.min.js'></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+    <script type='text/babel'>
+        ReactDOM.render(
+            React.createElement('div',null,React.createElement('p',null,
+            React.createElement('em',null,'欢迎来到React!'))),
+            document.getElementById('example')
+        );
+    </script>
+</body>
+</html>

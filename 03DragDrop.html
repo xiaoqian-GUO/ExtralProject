@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5拖拽</title>
+    <style type="text/css">
+    	#div1,#div2 {
+    		float: left;
+    		width: 200px;
+    		height: 200px;
+    		margin: 10px;
+    		padding: 5px;
+    		border: 1px solid red;
+    	}
+    </style>
+    <script type="text/javascript">
+    	function dragstart(ev){
+    		ev.dataTransfer.setData("text",ev.target.id);
+    	}
+    	function dragover(ev){
+    		ev.preventDefault();
+    	}
+    	function drop(ev){
+    		ev.preventDefault();
+    		var id=ev.dataTransfer.getData("text");
+    		ev.target.appendChild(document.getElementById(id));		
+    	}
+    </script>
+    
+</head>
+<body>
+    <form action="" method="post">
+        <input list="datalist1">
+        <datalist id="datalist1">
+            <option value="Internet explorer">ie</option>
+            <option value="Chrome">cm</option>
+            <option value="Firefox">fox</option>
+            <option value="LieBao">LB</option>
+        </datalist>
+        <button type="button" name="submit">提交</button>
+    </form>
+    <br />
+    <div id="div1" ondragover="dragover(event);" ondrop="drop(event);">
+    	<img src="002.jpg" id="drag" draggable="true" ondragstart="dragstart(event);" />
+    </div>
+    <div id="div2" ondragover="dragover(event);" ondrop="drop(event);"></div>
+    
+    
+      
+</body>
+</html>

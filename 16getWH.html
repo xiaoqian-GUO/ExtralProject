@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获得盒子模型的宽高</title>
+    <style>
+        div {
+            padding-top: 10px;
+            padding-bottom: 10px; 
+            border-width: 10px;
+            border-style: dotted;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="showMessage();" style="width:100px;height:100px;background-color:pink;">
+        <p style="text-align:center;">这是第一行元素</p>
+    </div>
+    <script>
+        function showMessage(){
+            var divs=document.getElementsByTagName("div");
+            alert("内联样式定义宽高："+divs[0].style.width+"--"+divs[0].style.height);
+            alert("渲染后的宽高："+window.getComputedStyle(divs[0]).width+"--"+window.getComputedStyle(divs[0]).height);
+            alert("盒子模型宽高："+divs[0].getBoundingClientRect().width+"--"+divs[0].getBoundingClientRect().height);
+        }
+    </script>
+</body>
+</html>

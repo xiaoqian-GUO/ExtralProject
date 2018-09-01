@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React的第一个项目</title>
+   
+</head>
+<body>
+    <div id='example'></div>
+    <div id='increment'></div>
+    <script type="text/javascript" src="./js/react.min.js"> </script>
+    <script type='text/javascript' src='./js/react-dom.min.js'></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+    <script type='text/babel'>
+    //设置定时器实现，每隔0.1s重新设置组件的透明度，并重新
+    //渲染
+    var Hello=React.createClass({
+        getInitialState:function(){
+            return {opacity:1.0};
+        },
+        componentDidMount:function(){
+            this.timer=setInterval(function(){
+            var opacity=this.state.opacity;
+            opacity-=0.05;
+            if(opacity<0.1){
+                opacity=1.0;
+            }
+            this.setState({
+                opacity:opacity,
+            });
+            }.bind(this),100);
+        },
+        render:function(){
+            return (
+                <div style={{opacity:this.state.opacity}}>
+                    hello {this.props.name}
+                </div>
+            );
+        }
+    });
+        ReactDOM.render(
+            <Hello name='xiaoqian' />,
+            document.getElementById('example')
+        );
+
+        var Button=React.createClass({
+            getInitialState:function(){
+                return {data:0};
+            },
+            setNewNumber:function(){
+                this.setState(function(state){
+                    return {
+                        data:state.data+1,
+                    }
+                });
+            },
+            render:function(){
+                return (
+                    <div>
+                        <button onClick={this.setNewNumber}>INCREMENT</button>
+                        <Content myNumber={this.state.data}></Content>
+                    </div>
+                );
+            },
+        });
+        var Content=React.createClass({
+            componentWillMount:function(){
+                console.log('Component will mount!');
+            },
+            componentDidMount:function(){
+                console.log('Component did mount!');
+            },
+            componentWillReceiveProps:function(newProps){
+                console.log('Component will receive props!');
+            },
+            shouldComponentUpdate:function(newProps,newState){
+                return true;
+            },
+            componentWillUpdate:function(newProps,newState){
+                console.log('Component will update!');
+            },
+            componentDidUpdate:function(newProps,newState){
+                console.log('Component did update!');
+            },
+            componentWillUnmount:function(){
+                console.log('Component will unmount!');
+            },
+            render:function(){
+                return (
+                    <h3>{this.props.myNumber}</h3>
+                );
+            },
+        });
+        ReactDOM.render(
+            <div>
+                <Button />
+            </div>,
+            document.getElementById('increment'),
+        );
+    </script>
+</body>
+</html>

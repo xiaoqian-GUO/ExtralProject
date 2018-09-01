@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5本地存储</title>
+    <style type="text/css">
+    	
+    </style>
+    <script type="text/javascript">
+    	function addCount(){
+            if(typeof(Storage)!=="undefined"){
+                if(localStorage.clickcount){
+                    localStorage.clickcount=Number(localStorage.clickcount)+1;
+                }
+                else{
+                    localStorage.clickcount=1;
+                }
+                document.getElementById("result").innerHTML=("你已经点击该按钮"+localStorage.clickcount+"次！");
+            }
+            else{
+                document.getElementById("result").innerHTML="抱歉，您的浏览器不支持web storage!";
+            }
+        }
+        function addSession(){
+            if(typeof(Storage)!=="undefined"){
+                if(sessionStorage.clickcount){
+                    sessionStorage.clickcount=Number(sessionStorage.clickcount)+1;
+                }
+                else{
+                    sessionStorage.clickcount=1;
+                }
+                document.getElementById("session").innerHTML=("你已经点击该按钮"+sessionStorage.clickcount+"次！");
+            }
+            else{
+                document.getElementById("session").innerHTML="抱歉，您的浏览器不支持web storage!";
+            }
+        }
+    </script>
+    
+</head>
+<body>
+	<!--
+    	作者：1454135606@qq.com
+    	时间：2018-03-07
+    	描述：HTML本地存储：优于cookies,web应用程序能够在用户浏览器中对数据进行本地的存储，
+    	可以实现在不影响网站性能的前提下将大量的数据存储于本地
+    	相比较于cookie，本地存储限制要大得多（至少5MB），并且信息不会被传输到服务器 
+    -->
+    <p><button onclick="addCount();">请点击这里</button></p>
+    <p><button onclick="addSession();">请点击这里(session):</button></p>
+    localStorage:<div id="result"></div>
+    sessionStorage:<div id="session"></div>
+    <p>请点击按钮使计数器递增</p>
+    <p>请关闭浏览器或标签页，然后再试一次，计数器将继续计数，不能重置。</p>
+      
+</body>
+</html>

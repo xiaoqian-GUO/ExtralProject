@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>裁剪图片</title>
+    <style type="text/css">
+    /*这里的clip中的top：距离顶边的距离，right距离左边的距离，bottom距离顶边的距离，left距离左边的距离*/
+        img 
+        {
+        position:absolute;
+        float: left;
+        vertical-align: text-top;
+        clip:rect(100px 200px 200px 50px);
+        }
+        p#next {
+            position: absolute;
+            left:200px;
+        }
+    </style>
+</head>
+<body>
+        <p>clip 属性剪切了一幅图像：</p>
+        <p><img border="0" src="girl.jpg" width="200" height="200"></p><p id="next">这里的clip中的top：距离顶边的距离，right距离左边的距离，bottom距离顶边的距离，left距离左边的距离</p>
+</body>
+</html>

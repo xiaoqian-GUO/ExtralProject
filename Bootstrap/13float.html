@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父级元素容纳浮动子元素</title>
+    <!-- 可以通过设置为flex布局，table布局，或者别的BFC元素设置样式等等
+    或者清除浮动等方法；-->
+    <style>
+        #h5 {
+            width: 300px;
+            border: 1px solid red;
+            background: black;
+            padding: 10px;
+            /* overflow: auto; */
+            display: table;
+        }
+        #left {
+            width: 100px;
+            height: 100px;
+            background: green;
+            float:left;
+            display: table-cell;
+            margin: 10px;
+        }
+        #right {
+            width: 100px;
+            height: 100px;
+            background:green;
+            float:right;
+            display: table-cell;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id='h5'>
+        <div id='left'></div>
+        <div id='right'></div>
+        <!-- <div style="clear:both;"></div> -->
+        <!-- <br clear="all"/> -->
+
+    </div>
+</body>
+</html>

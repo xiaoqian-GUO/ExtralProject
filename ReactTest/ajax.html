@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React的第一个项目</title>
+   
+</head>
+<body>
+    <div id='example'></div>
+    <div id='increment'></div>
+    <script type="text/javascript" src="./js/react.min.js"> </script>
+    <script type='text/javascript' src='./js/react-dom.min.js'></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+    <script type='text/babel'>
+        //操作React中的表单
+        var HelloMessage=React.createClass({
+            getInitialState:function(){
+                return{value:'Hello xiaoqian'};
+            },
+            handleChange:function(event){
+                this.setState({value:event.target.value});
+            },
+            render:function(){
+                var value=this.state.value;
+                return (
+                    <div>
+                        <input type='text' value={this.state.value} onChange={this.handleChange} />
+                        <h4>{value}</h4>
+                    </div>
+                );
+            },
+        });
+        ReactDOM.render(
+            <HelloMessage />,
+            document.getElementById('example'),
+        );
+
+        //点我输入框获取焦点
+        var MyComponent=React.createClass({
+            handleClick:function(){
+                this.refs.myInput.focus();
+            },
+            render:function(){
+                return (
+                    <div>
+                        <input type='text' ref='myInput' />
+                        <br/>
+                        <input type='button' onClick={this.handleClick} value='点击我输入框获取焦点'/>
+                    </div>
+                );
+            },
+        });
+        ReactDOM.render(
+            <div>
+                <MyComponent />
+            </div>,
+            document.getElementById('increment'),
+        );
+
+    </script>
+</body>
+</html>

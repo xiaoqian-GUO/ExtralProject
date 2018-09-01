@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5</title>
+    
+</head>
+<body>
+    <form action="" method="post">
+        <input list="datalist1">
+        <datalist id="datalist1">
+            <option value="Internet explorer">ie</option>
+            <option value="Chrome">cm</option>
+            <option value="Firefox">fox</option>
+            <option value="LieBao">LB</option>
+        </datalist>
+        <button type="button" name="submit">提交</button>
+    </form>
+    <br />
+    <canvas id="myCanvas" width="100px" height="100px" style="border:1px solid #444">
+        your broswer does nt support canvas.
+    </canvas>
+
+    <script type="text/javascript">
+        var c=document.getElementById("myCanvas");
+        var cxt=c.getContext("2d");
+        cxt.moveTo(10,10);
+        cxt.lineTo(50,10);
+        cxt.lineTo(50,30);
+        cxt.lineTo(10,10);
+        cxt.stroke();
+
+        cxt.fillStyle="red";
+        cxt.fillRect(0,90,10,10);
+
+        cxt.fillStyle="#FF0000";  //填充颜色不能少吧，不然可能无法显示
+        cxt.beginPath();
+        cxt.arc(50,50,15,0,Math.PI*2,true);
+        cxt.closePath();
+        cxt.fill();
+
+        var grd=cxt.createLinearGradient(20,90,100,100);
+        grd.addColorStop(0,"black");
+        grd.addColorStop("0.3","magenta");
+        grd.addColorStop("0.5","blue");
+        grd.addColorStop("0.6","green");
+        grd.addColorStop("0.8","yellow");
+        grd.addColorStop(1,"red");        
+        cxt.fillStyle=grd;
+        cxt.fillRect(20,90,100,100);
+        
+    </script>
+</body>
+</html>

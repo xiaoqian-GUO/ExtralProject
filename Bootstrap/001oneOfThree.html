@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1/3弹性布局</title>
+    <style>
+        ::selection{
+            background: orange;
+            color: red;
+        }
+        .flexContainer {
+            width: 400px;
+            height: 400px;
+            background: gray;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+        }
+        .flexItem1 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            line-height: 200px;
+        }
+        .flexItem2 {
+            width: 100px;
+            height: 150px;
+            background: pink; 
+            line-height: 150px;
+        }
+        .flexItem3 {
+            width: 100px;
+            height: 200px;
+            background: green;
+            line-height: 200px;
+        }
+        #my {
+            width: 400px;
+            height: 600px;
+            background: purple;
+        }
+        #test1 {
+            height: 200px;
+            width: 200px;
+            background: -webkit-linear-gradient(0deg,red,blue);
+            background: -o-linear-gradient(0deg,red,blue);
+            background: -moz-linear-gradient(0deg,red,blue);
+            background: linear-gradient(0deg,red,blue);
+
+        }
+        #test2 {
+            height: 200px;
+            width: 200px;
+            background: -webkit-linear-gradient(90deg,red,blue);
+            background: -o-linear-gradient(90deg,red,blue);
+            background: -moz-linear-gradient(90deg,red,blue);
+            background: linear-gradient(90deg,red,blue);
+
+        }
+        #test3 {
+            height: 200px;
+            width: 200px;
+            background: -webkit-linear-gradient(180deg,red,blue);
+            background: -o-linear-gradient(180deg,red,blue);
+            background: -moz-linear-gradient(180deg,red,blue);
+            background: linear-gradient(180deg,red,blue);
+
+        }
+        #test4 {
+            height: 200px;
+            width: 200px;
+            background: -webkit-linear-gradient(270deg,red,blue);
+            background: -o-linear-gradient(270deg,red,blue);
+            background: -moz-linear-gradient(270deg,red,blue);
+            background: linear-gradient(270deg,red,blue);
+
+        }
+        #gradientText {
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(red,green);
+            border: 1px solid red; 
+        }
+        #gradientText > p {
+           position: absolute;
+           margin: auto;
+           width: 50px;
+           height: 50px;
+           top: 0px;
+           left: 0px;
+           right: 0px;
+           bottom: 0px; 
+           color:gray;
+           font-size: 10px;
+        }
+        #grad1 {
+            height: 200px;
+            background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%); /* Safari 5.1 - 6.0 */
+            background: -o-repeating-linear-gradient(red, yellow 10%, green 20%); /* Opera 11.1 - 12.0 */
+            background: -moz-repeating-linear-gradient(red, yellow 10%, green 20%); /* Firefox 3.6 - 15 */
+            background: repeating-linear-gradient(red, yellow 10%, green 20%); /* 标准的语法（必须放在最后） */
+        }
+        #radial {
+            height: 150px;
+            width: 150px;
+            background: -webkit-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* Safari 5.1 - 6.0 */
+            background: -o-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* Opera 11.6 - 12.0 */
+            background: -moz-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* Firefox 3.6 - 15 */
+            background: radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* 标准的语法（必须放在最后） */
+        }
+        #ten {
+            width: 50%;
+            background-color: green;
+            color: white;
+            font-size: 10px;
+            border: 5px solid red;
+        }
+        #twenty {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            border: 5px solid yellow;
+        }
+        #btn {
+            display: inline-block;
+            color: white;
+            border-radius: 4px;
+            width: 200px;
+            background: #f4511e;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        #btn span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        #btn span::after {
+            content: '>>';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        #btn:hover span {
+            padding-right:35px;
+        }
+        #btn:hover span::after {
+            opacity: 1;
+            right: 0;
+        }
+        #clk {
+            display: inline-block;
+            color: white;
+            background: #4caf50;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        #clk:hover {
+            background: #3e8e41;
+        }
+        #clk:active {
+            background: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div id='my'>
+            <div class='flexContainer'>
+                <div class='flexItem1'>第一行文本</div>
+                <!-- <div class='flexItem2'>第二行文本</div>
+                <div class='flexItem3'>第三行文本</div> -->
+            </div>
+            <p style='text-transform:capitalize'>this is a small caps</p>
+    </div>
+    <div id='test1'></div>
+    <div id='test2'></div>
+    <div id='test3'></div>
+    <div id='test4'></div>
+    <div id='gradientText'><p>渐变背景</p></div>
+    <div id='grad1'></div>
+    <div id='radial'></div>
+    <button id='ten'>10px</button>
+    <button id='twenty'>20px</button>
+    <div id='btn'><span>Hover</span></div>
+    <div id='clk'>Click Me</div>
+</body>
+</html>

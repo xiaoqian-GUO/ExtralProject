@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3新特性</title>
+    <style>
+        div.test {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            width: 360px;
+            background-color: gray;
+            padding: 10px 4px;
+            border: 1px solid #a1a1a1;
+            border-radius: 30px;
+        }
+        div.rect {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            box-shadow: 10px 15px 5px black ;
+        }
+        div.borderImage {
+            height: 200px;
+            width: 200px;
+            padding: 50px;
+            background-size: 200px 200px;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            background-image: url(girl.jpg),url(flower.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+        <p>border-radius可以解决圆角矩阵的问题</p>
+    </div>
+    <div class="rect">
+
+    </div>
+    <div class="borderImage">
+        border-image属性允许您规定自己使用的照片
+    </div>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网格布局:qq浏览器不支持</title>
+    <style type="text/css">
+    .container {
+        display: grid;
+        background: #a1a1a1;
+        grid-template-columns: 100px 10px 100px 10px 100px 10px;
+        grid-template-rows: 50px 10px 50px 10px;
+
+    }
+    .main {
+        background: red;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        
+    }
+    .left {
+        background: pink;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .right {
+        background: blue;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .third {
+        background: red;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        
+    }
+    .second {
+        background: pink;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .first {
+        background: blue;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="main"></div>
+        <div class="right"></div>
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+    </div>
+</body>
+</html> -->
+
+<!--网格布局-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网格布局</title>
+    <style>
+        .container {
+            display:grid;
+            background: gray;
+            width: auto;   /*可以实现自适应的结果*/
+            grid-template-columns:repeat(15,1fr);
+            grid-template-rows: 50px 10px 50px 10px 50px 10px;
+        }
+        .first {
+            grid-column:1/7;
+            grid-row:1/2;
+            background: pink;
+        }
+        .second {
+            grid-column:12/15;
+            grid-row:3/4;
+            background: green;
+        }
+        .third {
+            grid-column:1/5;
+            grid-row:5/6;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='first'></div>
+        <div class='second'></div>
+        <div class='third'></div>
+    </div>
+</body>
+</html> -->
+
+<!--圣杯布局-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局</title>
+    <style>
+        .holyGrid {
+            display: flex;
+            flex-direction: column;
+            min-height: 100px;
+            background: gray;
+        }
+        header,footer {
+            flex: 1;
+            height: 100px;
+            background:white;
+            color: black;
+            text-align: center;
+            line-height: 100px;
+        }
+        .holyGrid-body {
+            display: flex;
+            flex: 1;
+            min-height: 400px;
+        }
+        .holyGrid-content {
+            flex:1;
+            background: green;
+        }
+        .holyGrid-nav {
+            flex:0 0 12em;
+            background: red;
+        }
+        .holyGrid-aside {
+            flex:0 0 12em;
+            background:yellow;
+        }
+    </style>
+</head>
+<body class='holyGrid'>
+    <header>西安电子科技大学简介</header>
+    <div class="holyGrid-body">
+        <nav class="holyGrid-nav"></nav>
+        <main class="holyGrid-content"></main>
+        <aside class="holyGrid-aside"></aside>
+    </div>
+    <footer>西安电子科技大学</footer>
+</body>
+</html> -->
+
+
+<!--通过margin和百分比的定位来实现居中-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>margin实现居中</title>
+    <style>
+        #main{
+            width: 400px;
+            height:400px;
+            background: pink;
+        }
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -120px;
+            height: 240px;
+            margin-top: -120px;
+        }
+    </style>
+</head>
+<body>
+    <div id='main'>
+        <div id="content">Content here</div>      
+    </div>
+</body>
+</html> -->
+
+
+<!--输入框的布局-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>输入框的布局</title>
+    <style>
+        .InputAddOn {
+            display: flex;
+            width: 300px;
+        }
+        .InputAddOn-field {
+            flex: 1;
+        }
+        img {
+            width:20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="InputAddOn">
+        <span class="InputAddOn-item"><img src='girl.jpg'></span>
+        <input class="InputAddOn-field">
+        <button class="InputAddOn-item">确认</button>
+    </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex的多列布局以及文本换行</title>
+    <style>
+        .flex-text {
+            display: flex;
+            width: 300px;
+            align-items:flex-start;
+        }
+        .flex-img {
+            padding-top: 1em;
+            margin-right: 1em;
+            width: 50px;
+            height: 50px;
+        }
+        .flex-p {
+            flex:1;
+            border: 0.1px solid gray;
+            padding: 10px;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-text">
+        <img src="girl.jpg" class="flex-img">
+        <p class='flex-p'>小女孩小女孩小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+                小女孩小女孩小女孩小女孩
+        </p>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>让header和footer固定在顶部和底部</title>
+    <style>
+        .site {
+            display: flex;
+            min-height: 100vh;
+            width: 50vw;  /*vh和vw的单位也是自适应的*/
+            flex-direction: column;
+        }
+        .site-content {
+            flex:1;
+            text-align: center;
+        }
+        header,footer {
+            text-align: center;
+            background: gray;
+        }
+        @media screen and (min-width:600px){
+            .first {
+                width: 100px;
+                height: 100px;
+                border: 1px solid red;
+                background: gray;
+                padding: 10px;
+                margin: 10px;
+            }
+            .second {
+                width: 50px;
+                height: 50px;
+                border: 1px solid blue;
+                background: pink;
+                padding: 10px;
+                margin: 0 auto;
+            }
+            li {
+                display: inline-block;
+                text-decoration: none;
+                list-style-type: none;
+                padding: 100px;
+            }
+            .fancy {
+                width: 500px;
+                margin: 20px auto;
+                padding: 50px;
+                border: solid blue 10px;
+                box-sizing: border-box;
+                clear: both;            
+            }
+            .dancy {
+                float: left;
+                width: 100px;
+                height: 100px;
+                background: pink;
+            }
+            body {
+                background: green;
+            }
+            .box {
+                width:100px;
+                height: 100px;
+                float: left;
+                margin: 1em;
+                border: 1px solid blue;
+            }
+        }
+        
+        @media screen and (max-width:599px){
+            .first {
+                width: 100px;
+                height: 100px;
+                border: 1px solid red;
+                background: gray;
+                padding: 10px;
+                margin: 10px;
+            }
+            .second {
+                width: 50px;
+                height: 50px;
+                border: 1px solid blue;
+                background: pink;
+                padding: 10px;
+                margin: 0 auto;
+            }
+            .fancy {
+                width: 500px;
+                margin: 20px auto;
+                padding: 50px;
+                border: solid blue 10px;
+                box-sizing: border-box;
+                clear: both;            
+            }
+            .dancy {
+                float: left;
+                width: 100px;
+                height: 100px;
+                background: pink;
+            }
+            body {
+                background: green;
+            }
+            nav li {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="site">
+        <header>header</header>
+        <main class="site-content">content</main>
+        <footer>footer</footer>
+    </div> -->
+    <div class='first' id='second'>
+       
+    </div>
+    <div class='second' id='first'></div>
+    <div class='first'>
+        <div class='second'></div>
+    </div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <div class="dancy"></div>  
+    <div class="fancy"> </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

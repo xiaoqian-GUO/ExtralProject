@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        var i=0;
+        var name="xiao";
+        function startNum(){
+            i=i+1;
+            document.getElementById("num").innerHTML=i;
+            msg=setTimeout("startNum()",1000);
+        }
+        function endNum(){
+            clearTimeout(msg);
+        }
+        function alertMessage(){
+            alert('是否达到定时效果！');
+        }
+        function sto(){
+            setTimeout("alertMessage();",5000);
+        }
+        function cycleAlert(){
+            setInterval("alertMessage();",1000);
+        }
+    </script>
+</head>
+<body>
+    <p>计数：<span id='num'></span></p>
+    <button onclick="startNum();">开始计数</button>
+    <button onclick="endNum();">结束计数</button>
+    <button onclick="sto();">setTimeout</button>
+    <button onclick="cycleAlert();">setInterval</button>
+</body>
+</html>

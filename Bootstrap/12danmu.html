@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现弹幕的简单动画效果</title>
+    <style>
+        #danmu {
+            position: relative;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            background: red;
+            text-align: center;
+            vertical-align: middle;
+            color: black;
+            text-decoration:blink;
+            animation: myAnimation 10s;
+            animation-fill-mode: both;
+        }
+        @keyframes myAnimation{
+            0% {background-color: red;top:50px;left:1200px;}
+            100% {background-color: blue;top:50px;left:-300px;}
+        }
+    </style>
+</head>
+<body>
+   <div id='danmu'>这是弹幕呦~~</div>
+</body>
+</html>

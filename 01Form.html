@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5</title>
+    
+</head>
+<body>
+    <form action="" method="post">
+        <input list="datalist1">
+        <datalist id="datalist1">
+            <option value="Internet explorer">ie</option>
+            <option value="Chrome">cm</option>
+            <option value="Firefox">fox</option>
+            <option value="LieBao">LB</option>
+        </datalist>
+        <button type="button" name="submit">提交</button>
+    </form>
+    <br />
+    <canvas id="myCanvas01" width="100px" height="100px" style="border:1px solid #444">
+        your broswer does nt support canvas.
+    </canvas>
+    <br />
+    <canvas id="myCanvas02" width="300px" height="300px" style="border:1px solid #444">
+        your broswer does nt support canvas.
+    </canvas>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+	   	<polygon points="100,10 40,180 190,60 150,80"
+	   	style="fill:red;stroke:green;stroke-width:1;fill-rule:nonzero;" />
+	</svg>
+	
+	<!--
+    	作者：1454135606@qq.com
+    	时间：2018-03-07
+    	描述：音頻和視頻 動畫等
+    -->
+    
+	
+
+    <script type="text/javascript">
+        var c=document.getElementById("myCanvas01");
+        var cxt=c.getContext("2d");
+        cxt.moveTo(10,10);
+        cxt.lineTo(50,10);
+        cxt.lineTo(50,30);
+        cxt.lineTo(10,10);
+        cxt.stroke();
+
+        cxt.fillStyle="red";
+        cxt.fillRect(0,90,10,10);
+
+		//画圆
+        cxt.fillStyle="#FF0000";  //填充颜色不能少吧，不然可能无法显示
+        cxt.beginPath();
+        cxt.arc(50,50,15,0,Math.PI*2,true);
+        cxt.closePath();
+        cxt.fill();
+
+		//定义渐进色
+        var grd=cxt.createLinearGradient(20,90,100,100);
+        grd.addColorStop("0","black");
+        grd.addColorStop("0.3","magenta");
+        grd.addColorStop("0.5","blue");
+        grd.addColorStop("0.6","green");
+        grd.addColorStop("0.8","yellow");
+        grd.addColorStop(1,"red");        
+        cxt.fillStyle=grd;
+        cxt.fillRect(20,90,100,100);
+        
+        //在画布上放置图像
+        window.onload=function(){
+	        var cvs2=document.getElementById("myCanvas02");
+	        var img=cvs2.getContext("2d");
+	        img.fillStyle="red";
+	        img.beginPath();
+	        img.arc(150,150,20,0,Math.PI,true);
+	        img.closePath();
+	        img.fill();
+	        
+			var pic=new Image();
+			pic.src="001.jpg";
+			//圖片加載完成後在調用函數
+			pic.onload=function(){
+				img.drawImage(pic,0,0);
+			}
+			
+			
+			//SVG圖像可通過文本編輯器來創建和修改
+			//SVG圖像可在任何的分辨率下被高質量的打印
+			//svg適合大型渲染區域的應用程序
+			//不適合遊戲應用
+			
+			
+        }
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3转换：从一种状态逐渐转化为另一种状态</title>
+    <style>
+        div.transition {
+            width: 100px;
+            height: 100px;
+            border:green;
+            margin: 10px;
+            background: pink;
+            background-origin: content-box;
+            transition: transform 3s,width 3s,height 3s;
+        }
+        div.transition img {
+            width: 100px;
+            height: 100px;
+        }
+        div.transition:hover {
+            width: 200px;
+            height: 200px;
+            transform: rotate(45deg);
+        }
+        .newspaper {
+            column-count: 3;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="transition">
+        <img src="girl.jpg" id="pic"/>
+        <label>这是块级元素吗？</label>
+    </div>
+    <div class="newspaper">
+        <p>人民网北京2月24日电 (记者 刘阳)国家发展改革委近日发出通知，
+           决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，
+        折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元
+        和0.25元。 此次国内成品油价格调整幅度，是按照现行国内成品油价
+        格形成机制，根据国际市场油价变化情况确定的。
+        去年11月16日国内成品油价格调整以来，受市场预期欧美经济复苏前
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        function transition(){
+            var pic=document.getElementById("pic");
+            pic.src="flower.jpg";
+        }
+    </script>
+</body>
+</html>

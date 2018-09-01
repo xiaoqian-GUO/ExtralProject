@@ -1,0 +1,11 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "this is first webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "123"
+  },
+  "author": "",
+  "license": "ISC"
+}

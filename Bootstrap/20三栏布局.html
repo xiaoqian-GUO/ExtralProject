@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>常规的三栏布局</title>
+    <style>
+        footer {
+            position: fixed;
+            height: 70px;
+            background-color: gray;
+            color: white;
+            width: 100%;
+            left: 0px;
+            bottom: 0px;
+            padding: 2px;
+            text-indent: 2em;
+        }
+        body {
+            margin-bottom: 120px;
+        }
+        .container {
+            position: relative;
+        }
+        nav {
+            position: absolute;
+            left: 0px;
+            width: 180px;
+            border: 3px solid yellow;
+        }
+        section {
+            border: 3px solid green;
+            margin-left: 200px;
+            padding: 20px;
+            text-indent: 2em;
+            margin-bottom: 2px;
+        }
+        li {
+            list-style-type: circle;
+        }
+        img {
+            
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>HOME</li>
+                <li>Taco Menu</li>
+                <li>Draft List</li>
+                <li>Hours</li>
+                <li>Directions</li>
+            </ul>
+        </nav>
+        <section>第一行section</section>
+        <section>第二行section第二行section第二行section
+                第二行section第二行section第二行section
+                第二行section第二行section第二行section
+                第二行section第二行section第二行section
+                第二行section第二行section第二行section
+        </section>
+        <section>最后一行section</section>
+        <section>
+            <img src="girl.jpg">
+            <p>小女孩小女孩小女孩小女孩
+            小女孩小女孩小女孩小女孩
+            小女孩小女孩小女孩小女孩
+            小女孩小女孩小女孩小女孩
+            小女孩小女孩小女孩小女孩
+            </p>
+        </section>
+        <footer>如果你使用了一个固定定位的页眉或页脚，要保证有足够的空间
+            ，我在body上设置了margin-bottom。
+        </footer>
+    </div>
+</body>
+</html>

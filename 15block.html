@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>block</title>
+</head>
+<body>
+    <div style="background-color:pink;height:2px;overflow:hidden;"></div>
+    <div onclick="say();" style="background-color:pink;width:100px;height:100px;border-radius:50px;text-align:center;line-height:100px;">圆</div>
+    <form action="#" method="post">
+        <label for="name">姓名：</label>
+        <input name="name" id="name" type="text" value="郭晓倩" />
+        <label for="pwd">密码：</label>
+        <input name="pwd" type="password" id="pwd" value="123456" />
+        <label>Date:<input type="text" name="B"/></label>
+    </form>
+    <script>
+        var name="xiao";
+        function say(){
+            //根据执行环境和作用域的问题，在函数内部作用域内，会将name进行变量提升，
+            //并附为undefined，但并没有赋值，所以在函数内部第一行语句执行的时候为undefined；
+            alert(name);
+            var name="小黄";
+            alert(name);
+        }
+    </script>
+</body>
+</html>

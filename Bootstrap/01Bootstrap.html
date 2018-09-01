@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap之hello world！</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>表格</h2>
+        <p>创建响应式表格，将在小于768px的屏幕上水平滚动，注意：添加
+            交替单元格的背景色
+        </p>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Street</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Anna Awesome</td>
+                        <td>Broome Street</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Anna Awesome</td>
+                        <td>Broome Street</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Debbie Dallas</td>
+                        <td>Houston Street</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <img src='girl.jpg' class="img-responsive img circle" style='width:200px;height:200px;'>
+        <h2>图标</h2>
+        <p>插入图标:</p>      
+        <p>云图标: <span class="glyphicon glyphicon-cloud"></span></p>      
+        <p>信件图标: <span class="glyphicon glyphicon-envelope"></span></p>            
+        <p>搜索图标: <span class="glyphicon glyphicon-search"></span></p>
+        <p>打印图标: <span class="glyphicon glyphicon-print"></span></p>      
+        <p>下载图标：<span class="glyphicon glyphicon-download"></span></p>
+        <p>三角形图标:<span class=" glyphicon glyphicon-step-backward" style="float:top;transform:rotate(90deg)"></span>
+            <span class=" glyphicon glyphicon-step-backward" style="float:top;transform:rotate(-90deg)"></span>
+        </p>
+    <div class="row">
+        <div class="col-md-4 col-md-push-8" style='background:gray;'>我在右边</div>
+        <div class="col-md-8 col-md-pull-5" style='background:gray;'>我在右边</div>
+    </div>
+    <h1>我是标题1 h1<small>我是副标题</small></h1>
+    <h2>我是标题2 h2</h2>
+    <h3>我是标题3 h3</h3>
+    <h4>我是标题4 h4</h4>
+    <h5>我是标题5 h5</h5>
+    <h6>我是标题6 h6</h6>
+    <p class="lead">这段文本是引导主体的副本</p>
+    <p class="text-left">左对齐</p>
+    <p class="text-right">右对齐</p>
+    <p class="text-center">居中对齐</p>
+    <p class="text-muted">减弱显示</p>
+    <p class="text-success">本行内容带有一个success class</p>
+    <p class="text-info">本行内容带有一个info class</p> 
+    <p class="text-primary">本行内容带有一个primary class</p>
+    <p class="text-warning">warning class</p>  
+    <p class="text-danger">danger class</p>    
+    </div>
+    <script>
+        var width=document.documentElement.scrollWidth;
+        var height=document.documentElement.scrollHeight;
+        console.log(width,height);
+    </script>
+    <script src="js/jquery-3.3.1.min.js"></script>    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+    <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+

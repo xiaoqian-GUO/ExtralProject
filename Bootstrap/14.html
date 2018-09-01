@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试addEventListener多次绑定事件的执行顺序</title>
+    
+</head>
+<body>
+    <button id='btn'>点击触发绑定事件</button>
+    <script>
+            var btn=document.getElementById('btn');
+            var bdy=document.body;
+            console.log(btn);
+            btn.addEventListener('click',function(e){
+                alert('第一次绑定的事件');
+            },false);
+            btn.addEventListener('click',function(e){
+                alert('第二次绑定的事件');
+            },false);
+            bdy.addEventListener('keydown',function(e){
+                alert(String.fromCharCode(e.keyCode));
+            },false);
+    </script>
+</body>
+</html>
